@@ -11,7 +11,6 @@ void print_diagonal(int n)
 	int i, j;
 
 	if (n <= 0)
-		A
 		_putchar('\n');
 	for (i = 0; i < n; i++)
 	{
