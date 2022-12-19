@@ -1,28 +1,46 @@
 #include "main.h"
 
 /**
-  * rev_string - Reverses a string
-  * @s:npsrameter
-  *
-  */
+ *  * _strlen - count the length of a string
+ *   * @s: the string that we want to know the length of
+ *    *
+ *     * Return: The length of the string
+ *      */
+int _strlen(char *s)
+{
+		int i = 0;
+
+			while (i < INT_MAX)
+					{
+								if (s[i] == '\0')
+											{
+															break;
+																	}
+										i++;
+											}
+				return (i);
+}
+
+/**
+ *  * rev_string - reverse a string in memory
+ *   * @s: the address of the string in memory
+ *    */
 void rev_string(char *s)
 {
-	"sam" -> "mas"
-	char tmp;
-	int i, length1, length2;
+		int l = _strlen(s), i, j;
+			/* chose thise because INT_MAX prevented compilation */
+			char c[CHAR_MAX * 100];
 
-	length1 = 0;
-	length2 = 0;
-
-	while (s[length1] != '\0')
-		length1++;
-
-	lengrh2 = length1 - 1;
-	for (i = 0; i < length1 / 2; i++)
-	{
-		tmp = s[i];
-		s[i] = s[length2];
-		s[length2] = tmp;
-		length2 = 1;
-	}
+				i = 0;
+					j = l;
+						while (i <= l)
+								{
+											c[j] = s[i];
+													i++;
+															j--;
+																}
+							for (j = 1; j <= l; j++)
+									{
+												s[j - 1] = c[j];
+													}
 }
