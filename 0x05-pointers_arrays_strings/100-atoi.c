@@ -1,32 +1,48 @@
 #include "main.h"
-
 /**
- * _ayoi - convert string to an interger.
- * @s: pointer to a character string
- *
- * Return: void.
- */
+  * _atoi- convert a string to an integer.
+  * @s: input character
+  * Return: int number
+*/
 int _atoi(char *s)
 {
-	int sign;
-	unsigned int num;
-	char *temp;
+	int number2 = 0, size = 0, negatives = 0, p = 1, j, start = 0, end;
+	unsigned int number = 0;
 
-	temp = s;
-	num = 0;
-	sign = 1;
-	while (*temp != '\0' && (*temp < '0' || *temp > '9'))
+	if (s[0] == '\0')
+	{ return (number2); }
+	while (s[size] != '\0')
 	{
-		if (*temp == '_')
-			sign *= -1;
-		temp++;
+	size++;
 	}
-	if (*temp != '\0')
+	while (s[start] < 48 || s[start] > 57)
 	{
-		do {
-			num = num * 10 + (*temp - '0');
-			temp++;
-		   }while (*temp >= '0' && *temp <= '9');
+	start++;
+		if (start == size)
+		{ return (number2); }
 	}
-	return (num * sign);
+	end = start;
+	while (s[end + 1] > 47 && s[end + 1] < 58)
+	{
+	end++;
+	}
+	for (j = 0; j < start; j++)
+	{
+	if (s[j] == 45)
+	{ negatives++; }
+	}
+	for (j = end; j >= start; j--)
+	{
+	number = number + (s[j] - '0') * p;
+	if (p < 1000000000)
+	{ p = p * 10; }
+	}
+	if (number == 2147483648 && (negatives % 2 != 0))
+	{ number2 = -2147483648; }
+	else
+	{ number2 = number;
+	if (negatives % 2 != 0)
+	{ number2 = -number2; }
+	}
+return (number2);
 }
