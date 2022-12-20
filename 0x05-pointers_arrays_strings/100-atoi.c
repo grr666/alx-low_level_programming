@@ -4,7 +4,7 @@
  * _ayoi- convert string to an interger.
  * @s: pointer to a character string
  *
- * return: void
+ * Return: void
  */
 int _atoi(char *s)
 {
@@ -12,7 +12,7 @@ int _atoi(char *s)
 	unsigned int num;
 	char *tmp;
 
-	tmp = s;
+	temp = s;
 	num = 0;
 	sign = 1;
 	while (*tmp != '\0' && (*tmp < '0' || *tmp > '9'))
