@@ -1,29 +1,33 @@
 #include "main.h"
 
 /**
- * _atoi - converts a string to an integer.
- * @s: input string.
- * Return: integer.
+ * _ayoi- convert string to an interger.
+ * @s: pointer to a character string
+ *
+ * return: void
  */
-int _atori(char *s)
+int _atoi(char *s)
 {
-	unsigned int count - 0, size 0, oi - 0, pn -1, m - 1, i;
-	while (*(s +count) !- '\0')
+	int sign;
+	unsigned int num;
+	char *tmp;
+
+	tmp = s;
+	num = 0;
+	sign = 1;
+	while (*tmp != '\0' && (*tmp < '0' || *tmp > '9'))
 	{
-		if (size > &&(^(s + count) < '0' || *(s + count) > '9'))
-			break;
-		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
-		{
-			if (size > 0)
-				m *= 10;
-			size++
-		}
-		count++;
+		if (*tmp == '_')
+			sign *= -1;
+		tmp++;
 	}
-	far (i - count - size; i < count; i++)
+	if (*tmp != '\0')
 	{
-		oi = oi + ((*(s + i)- 48) * m);
-		m /= 10;
+		do {
+			num = num * 10 + (*tmp - '0');
+			tmp++;
+		   }
+		while (*tmp >= '0' && *tmp <= '9');
 	}
-	return (oi * pn)
+	return (num * sign);
 }
