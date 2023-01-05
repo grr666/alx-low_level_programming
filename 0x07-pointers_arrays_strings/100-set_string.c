@@ -5,10 +5,9 @@
 #include "main.h"
 
 /**
- * set_string - Entry point
- * @s: input character
- * @to: input character
- * Return: Always 0 (Success)
+ * set_string - sets the velue of pointer to a char Entry.
+ * @s: the poiter.
+ * @to: the chra
  */
 void set_string(char **s, char *to)
 {
